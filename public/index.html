@@ -9,8 +9,20 @@
 </head>
 
 <body>
-First App with Express
+    First App with Express
 
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        var socket = io();
+
+        socket.on('connect',()=>{
+            console.log('Connected to server');
+        });
+        socket.on('disconnect', ()=>{
+            console.log('Disconnect to server');
+        });
+    </script>
 </body>
 
 </html>
