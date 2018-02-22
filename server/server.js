@@ -19,9 +19,16 @@ io.on('connection', (socket) => {
     socket.on('disconnect', (socket) => {
         console.log('User disconnected');
     });
+
+    socket.on('createMessage', (message) => {
+        console.log('Createmessage', message);
+    })
+    socket.emit('newMessage', {
+        from: 'ooi',
+        text: 'olllhkjh'
+    })
+
 });
-
-
 
 server.listen(port, () => {
     console.log('Server is up on port ' + port);
