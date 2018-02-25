@@ -28,10 +28,10 @@ io.on('connection', (socket) => {
         console.log('User disconnected');
     });
 
-    socket.on('createMessage', (message) => {
+    socket.on('createMessage', (message, callback) => {
         console.log('Createmessage', message);
-
         io.emit('newMessage', generateMessage(message.from, message.text));
+        callback('this is form server');
         // socket.broadcast.emit('newMessage', {
         //     from: message.from,
         //     text: message.text,

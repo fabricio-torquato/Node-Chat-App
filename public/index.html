@@ -9,10 +9,21 @@
 </head>
 
 <body>
-    First App with Express
+    <p>Welcome to the chat app</p>
 
+    <div>
+        <ol id="messages">
+            
+        </ol>
+    </div>
+
+    <form id="message-form">
+        <input type="text" name="message" placeholder="Message">
+        <button>Send</button>
+    </form>
 
     <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/libs/jquery-3.2.1.min.js"></script>
     <script src="/js/index.js"></script>
 
 </body>

@@ -15,8 +15,19 @@ socket.on('disconnect', function () {
 socket.on('newEmail', function (emit) {
     console.log('New Email', emit);
 })
-socket.on('newMessage', function (emit) {
-    console.log('New Message', emit);
+socket.on('newMessage', function (message) {
+   var li = $('<li></li>');
+   li.text(`${message.from}: ${message.text}`);
+
+   $('#messages').append(li);
 })
 
+$('#message-form').on('submit', function(e){
+    e.preventDefault();
+    socket.emit('createMessage', {
+        from: 'User',
+        text: $('[name=message]').val()
+    },function(){
 
+    })
+})
