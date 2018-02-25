@@ -6,11 +6,6 @@ socket.on('connect', function () {
         to: "lala",
         text: "eae"
     })
-    socket.emit('createMessage', {
-        from: 'Tal pessoa',
-        text: "ola",
-        createdAt: "xxx"
-    })
 });
 
 socket.on('disconnect', function () {

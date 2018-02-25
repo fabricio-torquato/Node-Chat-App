@@ -22,12 +22,12 @@ io.on('connection', (socket) => {
 
     socket.on('createMessage', (message) => {
         console.log('Createmessage', message);
+        io.emit('newMessage', {
+            from: message.from,
+            text: message.text,
+            createdAt: new Date().getTime()
+        });
     })
-    socket.emit('newMessage', {
-        from: 'ooi',
-        text: 'olllhkjh'
-    })
-
 });
 
 server.listen(port, () => {
