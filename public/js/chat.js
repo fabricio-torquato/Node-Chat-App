@@ -47,9 +47,6 @@ socket.on('disconnect', function () {
     console.log('Disconnect to server');
 });
 
-socket.on('newEmail', function (emit) {
-    console.log('New Email', emit);
-})
 socket.on('newMessage', function (message) {
     var template = $('#message-template').html();
     var formattedTime = moment(message.createdAt).format('h:mm a')
