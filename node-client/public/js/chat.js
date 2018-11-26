@@ -1,4 +1,4 @@
-var socket = io();
+var socket = io('http://localhost:4000');
 
 function scrollToBottom() {
     var messages = $('#messages');

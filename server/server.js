@@ -1,4 +1,4 @@
-const path = require('path');
+// const path = require('path');
 const http = require('http');
 const express = require('express');
 const socketIO = require('socket.io')
@@ -8,14 +8,14 @@ const {
 const { isRealString } = require('./utils/validation');
 const { Users } = require('./utils/users');
 
-const publicPatch = path.join(__dirname, '../public');
+// const publicPatch = path.join(__dirname, '../public');
 const port = process.env.PORT || 4000;
 var app = express();
 //mudanca feita para fazer um servidor que funcione o socketIO
 var server = http.createServer(app);
 var io = socketIO(server);
 var users = new Users();
-app.use(express.static(publicPatch));
+// app.use(express.static(publicPatch));
 
 
 io.on('connection', (socket) => {
